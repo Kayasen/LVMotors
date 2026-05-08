@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90">
+<rect width="360" height="90" fill="none"/>
+<rect x="14" y="23" width="76" height="45" fill="#164c9c"/>
+<circle cx="52" cy="45" r="15" fill="none" stroke="#f6d34a" stroke-width="2" stroke-dasharray="2 5"/>
+<text x="108" y="39" fill="#fff" font-family="Arial, sans-serif" font-size="18" font-weight="800">Financiado pela</text>
+<text x="108" y="59" fill="#fff" font-family="Arial, sans-serif" font-size="18" font-weight="800">União Europeia</text>
+<text x="108" y="75" fill="#fff" font-family="Arial, sans-serif" font-size="13">NextGenerationEU</text>
+</svg>
