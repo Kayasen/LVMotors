@@ -1,1 +1,0 @@
-window.SITE_CONFIG={phone:"+351 915 400 070",whatsapp:"351915400070",email:"geral@lvmotors.pt",address:"Rua Dr. Alfredo da Costa 234, 4585-744 Rebordosa, Portugal"};

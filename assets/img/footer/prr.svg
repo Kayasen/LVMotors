@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 90">
-<rect width="260" height="90" fill="none"/>
-<circle cx="44" cy="45" r="28" fill="#10a84a"/>
-<path d="M44 17 A28 28 0 0 1 72 45 A28 28 0 0 1 44 73 C54 55 54 35 44 17Z" fill="#087a38"/>
-<path d="M44 17 C25 29 19 52 31 68 C36 49 50 36 72 45 A28 28 0 0 0 44 17Z" fill="#17c962"/>
-<text x="88" y="43" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="900">PRR</text>
-<text x="88" y="61" fill="#fff" font-family="Arial, sans-serif" font-size="10" font-weight="700">Plano de Recuperação</text>
-<text x="88" y="73" fill="#fff" font-family="Arial, sans-serif" font-size="10" font-weight="700">e Resiliência</text>
-</svg>
