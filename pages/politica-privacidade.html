@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Política de Privacidade | LVMOTORS</title>
+<meta name="description" content="Informação sobre proteção de dados, utilização do website e direitos do utilizador.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="../index.html"><img src="../assets/img/logo/lvmotors-logo-white.png" alt="LVMOTORS"></a>
+    <nav class="menu">
+      <a href="../index.html">Início</a>
+      <a href="../pages/sobre-nos.html">Sobre Nós</a>
+      <a href="../pages/stock.html">Stock</a>
+      <a href="../pages/servicos.html">Serviços</a>
+      <a href="../pages/contactos.html">Contacto</a>
+      <a class="credit-link" href="../pages/intermediacao-credito.html">Intermediação de Crédito</a>
+    </nav>
+    <div class="lang"><a href="politica-privacidade.html">PT</a><a href="../../en/pages/privacy-policy.html">EN</a></div>
+  </div>
+</header>
+<main class="section white legal-page">
+  <div class="container">
+    <div class="section-title">
+      <h2>Política de Privacidade</h2>
+      <p>Informação sobre proteção de dados, utilização do website e direitos do utilizador.</p>
+    </div>
+    <article class="legal-content">
+      
+<h3>Política de privacidade para este website</h3>
+<p>A partir de 25 de maio de 2018, passou a ser aplicável o Regulamento Geral sobre a Proteção de Dados Pessoais, Regulamento n.º 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016, aplicável em Portugal e nos restantes Estados-Membros da União Europeia.</p>
+<h3>Que dados recolhemos?</h3>
+<p>Este website não possui formulário de contacto ativo. O contacto com a LVMOTORS é efetuado voluntariamente pelo utilizador através de WhatsApp, telefone, e-mail ou outros links disponibilizados no website.</p>
+<p>Quando o utilizador nos contacta, poderemos tratar os dados que decida partilhar, nomeadamente nome, contacto telefónico, endereço de e-mail, mensagem, preferências comerciais e informação relacionada com a viatura pretendida.</p>
+<h3>Que utilidade damos aos dados?</h3>
+<p>Os dados pessoais são utilizados para responder a pedidos de informação, prestar esclarecimentos comerciais, acompanhar processos de compra, venda, retoma, consignação, financiamento ou intermediação de crédito, e cumprir obrigações legais aplicáveis.</p>
+<h3>Proteção dos dados pessoais</h3>
+<p>A LVMOTORS procura assegurar medidas técnicas e organizativas adequadas para proteger os dados pessoais contra perda, alteração, acesso indevido, divulgação ou utilização não autorizada.</p>
+<p>A LVMOTORS não vende dados pessoais a terceiros.</p>
+<h3>Responsável pelo tratamento</h3>
+<p>A entidade responsável pelo tratamento dos dados pessoais é a <strong>L.V.M., Lda</strong>, com sede em Estrada de Paço de Arcos Nº6E, 2770-129 Paço de Arcos.</p>
+<p>Para questões relacionadas com proteção de dados, pode contactar-nos através do e-mail <a href="mailto:lvm@grupokcapital.pt">lvm@grupokcapital.pt</a>.</p>
+<h3>Direitos do utilizador</h3>
+<p>O utilizador pode solicitar o acesso aos dados pessoais que lhe digam respeito, bem como a sua retificação, apagamento, limitação do tratamento, oposição ao tratamento e portabilidade dos dados, quando aplicável.</p>
+<h3>Conservação dos dados</h3>
+<p>Os dados pessoais serão conservados apenas pelo período necessário para as finalidades que motivaram a sua recolha ou posterior tratamento, sem prejuízo de prazos legais aplicáveis.</p>
+<h3>WhatsApp e links externos</h3>
+<p>Ao clicar no botão de WhatsApp, o utilizador é encaminhado para uma plataforma externa pertencente à Meta/WhatsApp. A partir desse momento, aplicam-se também os termos e a política de privacidade dessa plataforma.</p>
+<p>Este website possui ligações para websites de terceiros, nomeadamente WhatsApp, Google Maps, Instagram, TikTok, Livro de Reclamações e outras entidades. A LVMOTORS não se responsabiliza pela política de privacidade, cookies ou conteúdo presente nesses websites externos.</p>
+<h3>Resolução de conflitos</h3>
+<p>Para efeitos de cumprimento da Lei n.º 144/2015, de 8 de setembro, informa-se que, no setor automóvel, a resolução extrajudicial de conflitos de consumo se encontra assegurada pelo <strong>CASA - Centro de Arbitragem do Setor Automóvel</strong>.</p>
+<p>Mais informação disponível em <a href="https://www.arbitragemauto.pt" target="_blank" rel="noopener">www.arbitragemauto.pt</a>.</p>
+<h3>Aceitação e alterações</h3>
+<p>O uso deste website pressupõe a aceitação desta Política de Privacidade. A LVMOTORS reserva-se o direito de alterar esta política sempre que necessário.</p>
+
+    </article>
+  </div>
+</main>
+<script src="../assets/js/site-config.js" defer></script>
+<script src="../data/cars.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+(function(){
+    function initHeaderScrollForce(){
+        var header = document.querySelector('.header');
+        if(!header) return;
+
+        var lastY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var ticking = false;
+
+        function setHeaderHidden(hidden){
+            if(hidden){
+                header.classList.add('lvm-hide-header');
+                header.classList.remove('lvm-show-header');
+                header.style.setProperty('transform', 'translate3d(0,-140%,0)', 'important');
+            }else{
+                header.classList.remove('lvm-hide-header');
+                header.classList.add('lvm-show-header');
+                header.style.setProperty('transform', 'translate3d(0,0,0)', 'important');
+            }
+        }
+
+        function update(){
+            var y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            var diff = y - lastY;
+
+            if(y > 35){
+                header.classList.add('lvm-scrolled');
+            }else{
+                header.classList.remove('lvm-scrolled');
+            }
+
+            if(y > 110 && diff > 2){
+                setHeaderHidden(true);
+            }
+
+            if(diff < -2 || y < 70){
+                setHeaderHidden(false);
+            }
+
+            lastY = y <= 0 ? 0 : y;
+            ticking = false;
+        }
+
+        function requestUpdate(){
+            if(!ticking){
+                window.requestAnimationFrame(update);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestUpdate, {passive:true});
+        document.addEventListener('scroll', requestUpdate, {passive:true});
+        window.addEventListener('touchmove', requestUpdate, {passive:true});
+        window.addEventListener('wheel', requestUpdate, {passive:true});
+
+        setHeaderHidden(false);
+        update();
+    }
+
+    if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', initHeaderScrollForce);
+    }else{
+        initHeaderScrollForce();
+    }
+})();
+</script>
+
+</body>
+</html>

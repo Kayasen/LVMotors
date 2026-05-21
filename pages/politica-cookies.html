@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Política de Cookies | LVMOTORS</title>
+<meta name="description" content="Informação sobre cookies, links externos e tecnologias utilizadas no website.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="../index.html"><img src="../assets/img/logo/lvmotors-logo-white.png" alt="LVMOTORS"></a>
+    <nav class="menu">
+      <a href="../index.html">Início</a>
+      <a href="../pages/sobre-nos.html">Sobre Nós</a>
+      <a href="../pages/stock.html">Stock</a>
+      <a href="../pages/servicos.html">Serviços</a>
+      <a href="../pages/contactos.html">Contacto</a>
+      <a class="credit-link" href="../pages/intermediacao-credito.html">Intermediação de Crédito</a>
+    </nav>
+    <div class="lang"><a href="politica-cookies.html">PT</a><a href="../../en/pages/cookie-policy.html">EN</a></div>
+  </div>
+</header>
+<main class="section white legal-page">
+  <div class="container">
+    <div class="section-title">
+      <h2>Política de Cookies</h2>
+      <p>Informação sobre cookies, links externos e tecnologias utilizadas no website.</p>
+    </div>
+    <article class="legal-content">
+      
+<h3>O que são cookies?</h3>
+<p>Os cookies são pequenos ficheiros de informação que podem ser descarregados para o dispositivo do utilizador quando visita um website.</p>
+<h3>Para que servem os cookies?</h3>
+<p>Os cookies ajudam o website a memorizar informações sobre a visita do utilizador, como preferências ou definições técnicas, podendo facilitar a navegação e tornar a experiência de utilização mais eficiente.</p>
+<h3>Que tipo de cookies utilizamos?</h3>
+<p>Atualmente, o website da LVMOTORS não utiliza cookies de análise, publicidade, marketing, remarketing, Google Analytics, Meta Pixel ou TikTok Pixel.</p>
+<p>Poderão existir apenas cookies técnicos ou estritamente necessários ao funcionamento do website, caso sejam indispensáveis para assegurar a navegação, segurança ou funcionamento básico.</p>
+<h3>Cookies de sessão e cookies permanentes</h3>
+<p>Os cookies de sessão são temporários e permanecem no browser apenas durante a visita ao website. Os cookies permanentes podem ficar armazenados por um período superior, dependendo da sua finalidade.</p>
+<h3>Anúncios, Google Analytics e pixels</h3>
+<p>Este website não utiliza, neste momento, ferramentas de publicidade, Google Analytics, Google Tag Manager, Meta Pixel, TikTok Pixel, Google AdSense, DoubleClick DART ou tecnologias semelhantes.</p>
+<p>Caso no futuro sejam implementadas ferramentas de estatística, anúncios, medição de conversões ou remarketing, esta Política de Cookies será atualizada e será implementado um mecanismo de consentimento adequado antes da ativação desses cookies.</p>
+<h3>Links externos</h3>
+<p>O website contém links externos, nomeadamente para WhatsApp, Google Maps, Instagram, TikTok, Livro de Reclamações e outras entidades. Estes serviços apenas são abertos quando o utilizador clica voluntariamente nos respetivos links.</p>
+<h3>Gestão de cookies no browser</h3>
+<p>O utilizador pode gerir, bloquear ou eliminar cookies através das definições do seu browser. A desativação de certos cookies técnicos poderá afetar o funcionamento normal do website.</p>
+<h3>Atualizações</h3>
+<p>A LVMOTORS poderá atualizar esta Política de Cookies sempre que existam alterações técnicas, legais ou operacionais relevantes.</p>
+
+    </article>
+  </div>
+</main>
+<script src="../assets/js/site-config.js" defer></script>
+<script src="../data/cars.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+(function(){
+    function initHeaderScrollForce(){
+        var header = document.querySelector('.header');
+        if(!header) return;
+
+        var lastY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var ticking = false;
+
+        function setHeaderHidden(hidden){
+            if(hidden){
+                header.classList.add('lvm-hide-header');
+                header.classList.remove('lvm-show-header');
+                header.style.setProperty('transform', 'translate3d(0,-140%,0)', 'important');
+            }else{
+                header.classList.remove('lvm-hide-header');
+                header.classList.add('lvm-show-header');
+                header.style.setProperty('transform', 'translate3d(0,0,0)', 'important');
+            }
+        }
+
+        function update(){
+            var y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            var diff = y - lastY;
+
+            if(y > 35){
+                header.classList.add('lvm-scrolled');
+            }else{
+                header.classList.remove('lvm-scrolled');
+            }
+
+            if(y > 110 && diff > 2){
+                setHeaderHidden(true);
+            }
+
+            if(diff < -2 || y < 70){
+                setHeaderHidden(false);
+            }
+
+            lastY = y <= 0 ? 0 : y;
+            ticking = false;
+        }
+
+        function requestUpdate(){
+            if(!ticking){
+                window.requestAnimationFrame(update);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestUpdate, {passive:true});
+        document.addEventListener('scroll', requestUpdate, {passive:true});
+        window.addEventListener('touchmove', requestUpdate, {passive:true});
+        window.addEventListener('wheel', requestUpdate, {passive:true});
+
+        setHeaderHidden(false);
+        update();
+    }
+
+    if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', initHeaderScrollForce);
+    }else{
+        initHeaderScrollForce();
+    }
+})();
+</script>
+
+</body>
+</html>
