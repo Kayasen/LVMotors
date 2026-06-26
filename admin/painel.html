@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel Stock | LVMOTORS</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/style.css?v=admin-stock-only-center-1">
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body class="admin-body admin-body-clean">
+<header class="admin-topbar admin-topbar-site">
+  <div class="container admin-topbar-site__inner">
+    <a class="admin-topbar__brand admin-logo" href="../index.html" aria-label="LVMOTORS">
+      <img src="../assets/img/logo/lvmotors-logo-white.png" alt="LVMOTORS">
+    </a>
+    <nav class="admin-topbar__nav admin-menu admin-menu--stock-only" aria-label="Navegação do painel">
+      <a href="../pages/stock.html" class="is-active">Stock</a>
+    </nav>
+  </div>
+</header>
+
+<main class="admin-app">
+  <section class="admin-app-hero admin-app-hero-simple">
+    <div>
+      <span class="admin-kicker">LVMOTORS</span>
+      <h1>Painel de Stock</h1>
+      <p>Adiciona, edita, organiza e publica viaturas no site de forma simples.</p>
+    </div>
+    <div class="admin-server-card admin-server-card-simple">
+      <span id="server-dot" class="server-dot warn"></span>
+      <div>
+        <strong id="server-title">A verificar servidor...</strong>
+        <small id="server-text">O guardar direto só funciona num servidor com PHP.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="admin-quick-guide" aria-label="Passos rápidos">
+    <article><b>1</b><span>Escolhe ou cria a viatura</span></article>
+    <article><b>2</b><span>Preenche dados, extras e fotos</span></article>
+    <article><b>3</b><span>Clica em Guardar no site</span></article>
+  </section>
+
+  <section class="admin-metrics">
+    <article><strong id="stat-total">0</strong><span>Viaturas</span></article>
+    <article><strong id="stat-published">0</strong><span>No site</span></article>
+    <article><strong id="stat-draft">0</strong><span>Por publicar</span></article>
+    <article><strong id="stat-featured">0</strong><span>Destaque</span></article>
+  </section>
+
+  <section class="admin-main-grid">
+    <aside class="admin-card admin-sidebar">
+      <div class="admin-card-head">
+        <h2>Lista de viaturas</h2>
+        <span id="sidebar-count">0</span>
+      </div>
+
+      <div class="admin-actions admin-actions-grid">
+        <button id="btn-new" class="gold" type="button"><i class="fa-solid fa-plus"></i> Adicionar viatura</button>
+        <button id="btn-duplicate" type="button"><i class="fa-regular fa-copy"></i> Duplicar</button>
+        <button id="btn-delete" class="danger" type="button"><i class="fa-regular fa-trash-can"></i> Apagar viatura</button>
+      </div>
+
+      <label class="admin-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="car-search" type="search" placeholder="Pesquisar viatura...">
+      </label>
+
+      <p class="admin-mini-help admin-help-simple"><strong>Dica:</strong> clica numa viatura para editar. Arrasta para mudar a ordem no Stock.</p>
+      <div id="car-list" class="admin-car-list draggable-list"></div>
+    </aside>
+
+    <section class="admin-card admin-editor">
+      <div class="admin-card-head">
+        <h2>Editar viatura selecionada</h2>
+        <span class="admin-chip">Rascunho automático</span>
+      </div>
+
+      <div id="admin-current-car" class="admin-current-car">
+        <div class="admin-current-car__thumb"></div>
+        <div>
+          <strong>Nenhuma viatura selecionada</strong>
+          <span>Seleciona ou cria uma viatura.</span>
+        </div>
+      </div>
+
+      <div class="admin-tabs" role="tablist">
+        <button class="active" type="button" data-tab="identity"><i class="fa-solid fa-car"></i> Dados principais</button>
+        <button type="button" data-tab="specs"><i class="fa-solid fa-gauge-high"></i> Características</button>
+        <button type="button" data-tab="content"><i class="fa-solid fa-list-check"></i> Extras e texto</button>
+        <button type="button" data-tab="images"><i class="fa-regular fa-images"></i> Fotos</button>
+      </div>
+
+      <form id="car-form">
+        <div class="admin-tab-panel active" data-panel="identity">
+          <p class="admin-panel-note">Começa por preencher a marca, modelo e título que aparece no site.</p>
+          <div class="admin-form-grid">
+            <label class="admin-technical-field">ID automático / Slug<input id="car-id" placeholder="porsche-911-targa"></label>
+            <label>Estado
+              <select id="car-status">
+                <option value="published">Publicado</option>
+                <option value="draft">Rascunho</option>
+                <option value="reserved">Reservado</option>
+                <option value="sold">Vendido</option>
+              </select>
+            </label>
+            <label class="admin-check"><input id="car-featured" type="checkbox"> Viatura em destaque <small>Só 1 de cada vez. A anterior sai automaticamente.</small></label>
+            <label>Marca<input id="car-brand" placeholder="Porsche"></label>
+            <label>Modelo<input id="car-model" placeholder="911 Targa 4S"></label>
+            <label>Título da viatura<input id="car-title-pt" placeholder="Porsche 911 Targa 4S Heritage Edition"></label>
+            <input id="car-title-en" type="hidden">
+          </div>
+        </div>
+
+        <div class="admin-tab-panel" data-panel="specs">
+          <p class="admin-panel-note">Preenche apenas o que queres mostrar na página da viatura.</p>
+          <div class="admin-form-grid">
+            <label>Preço<input id="car-price" placeholder="Sob consulta"></label>
+            <label>Ano<input id="car-year" placeholder="2021"></label>
+            <label>Quilómetros<input id="car-mileage" placeholder="12 000 km"></label>
+            <label>Combustível<input id="car-fuel" placeholder="Gasolina"></label>
+            <label>Caixa<input id="car-transmission" placeholder="Automática"></label>
+            <label>Potência<input id="car-power" placeholder="450 cv"></label>
+            <label>Cor<input id="car-color" placeholder="Cherry Metallic"></label>
+          </div>
+        </div>
+
+        <div class="admin-tab-panel" data-panel="content">
+          <p class="admin-panel-note">Escreve a descrição e adiciona extras/equipamento por tópicos.</p>
+          <div class="admin-form-grid admin-form-grid--single">
+            <label>Descrição da viatura<textarea id="car-description-pt" placeholder="Escreve a descrição em português."></textarea></label>
+            <textarea id="car-description-en" hidden></textarea>
+          </div>
+
+          <div class="admin-translate-card">
+            <div>
+              <strong>Inglês automático</strong>
+              <span>O painel usa o título e descrição em português como base. Podes gerar o EN automaticamente ou ajustar manualmente.</span>
+            </div>
+            <button id="btn-translate-en" class="gold" type="button"><i class="fa-solid fa-language"></i> Gerar inglês</button>
+          </div>
+
+          <details class="admin-advanced-translation">
+            <summary>Editar inglês manualmente</summary>
+            <div class="admin-form-grid">
+              <label>Título EN<input id="car-title-en-manual" placeholder="English title"></label>
+              <label>Descrição EN<textarea id="car-description-en-manual" placeholder="English description"></textarea></label>
+            </div>
+          </details>
+
+          <div class="admin-feature-box">
+            <div class="admin-feature-box__head">
+              <div>
+                <h3>Equipamento / Extras</h3>
+                <p>Adiciona extras por botão e arrasta para ordenar.</p>
+              </div>
+            </div>
+            <div class="admin-feature-add">
+              <input id="feature-input" type="text" placeholder="Ex: Bancos desportivos, Sport Chrono, Câmara 360...">
+              <button id="btn-add-feature" class="gold" type="button"><i class="fa-solid fa-plus"></i> Adicionar</button>
+            </div>
+            <div id="features-list" class="features-list"></div>
+            <textarea id="car-equipment" hidden></textarea>
+          </div>
+        </div>
+
+        <div class="admin-tab-panel" data-panel="images">
+          <p class="admin-panel-note">A primeira foto é a capa do carro no Stock e na página da viatura.</p>
+          <div class="admin-upload-zone" id="upload-zone">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <strong>Upload de fotos da viatura</strong>
+            <span>Arrasta fotos para aqui. O servidor comprime automaticamente para WEBP/JPG.</span>
+            <input id="images-upload" type="file" accept="image/*" multiple>
+          </div>
+          <div class="admin-actions">
+            <button id="btn-upload-images" class="gold" type="button">Carregar e comprimir fotos</button>
+          </div>
+          <p class="admin-mini-help">A primeira foto é a capa. As fotos ficam comprimidas em assets/img/stock/ e podes arrastar para mudar a ordem.</p>
+          <textarea id="car-images" hidden></textarea>
+          <div id="admin-images-list" class="admin-images-list"></div>
+        </div>
+      </form>
+    </section>
+
+    <aside class="admin-card admin-publish">
+      <div class="admin-card-head">
+        <h2>Guardar no site</h2>
+      </div>
+
+      <label class="admin-form-full">Password
+        <input id="admin-password" type="password" placeholder="Password do painel" autocomplete="current-password">
+      </label>
+
+      <div id="admin-status" class="admin-status muted">Pronto.</div>
+
+      <div class="admin-actions admin-actions-stack">
+        <button id="btn-save-server" class="gold large admin-primary-save" type="button"><i class="fa-solid fa-floppy-disk"></i> Guardar alterações no site</button>
+        <details class="admin-advanced-actions">
+          <summary>Opções avançadas</summary>
+          <button id="btn-export-js" type="button"><i class="fa-solid fa-file-export"></i> Exportar cars.js</button>
+          <button id="btn-export-json" type="button"><i class="fa-regular fa-file-code"></i> Backup JSON</button>
+          <label class="admin-file-label"><i class="fa-solid fa-file-import"></i> Importar JSON<input id="import-json" type="file" accept="application/json" hidden></label>
+          <a class="admin-file-label" href="import-remote-images.php" target="_blank" rel="noopener"><i class="fa-regular fa-images"></i> Importar fotos dos links</a>
+          <button id="btn-clear-draft" class="danger" type="button"><i class="fa-solid fa-rotate-left"></i> Limpar rascunho</button>
+        </details>
+      </div>
+
+      <div class="admin-preview-title">Pré-visualização</div>
+      <div id="car-preview"></div>
+    </aside>
+  </section>
+</main>
+
+<script src="../data/cars.js"></script>
+<script src="../assets/js/admin-stock.js?v=admin-header-site-like-1"></script>
+</body>
+</html>

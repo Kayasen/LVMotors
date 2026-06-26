@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 300">
+<style>
+text{
+font-family:Arial,Helvetica,sans-serif;
+font-weight:900;
+letter-spacing:14px;
+fill:#ffffff;
+}
+</style>
+<text x="10" y="210" font-size="190">LVMOTORS</text>
+</svg>

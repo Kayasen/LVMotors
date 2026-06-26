@@ -1,0 +1,1 @@
+window.SITE_CONFIG={phone:'+351 918 742 025',whatsapp:'351918742025',email:'lvm@grupokcapital.pt',address:'Estrada de Paço de Arcos Nº6E, 2770-129 Paço de Arcos'};
